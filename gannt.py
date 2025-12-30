@@ -5,7 +5,7 @@ def create_gantt_chart(df):
 
 def main():
     data = {
-        "Task": ["Project A", "Project B", "Project C", "Project D"],
+        "Task": ["Project A", "Project B", "Project C", "Project D", "Project E"],
         "Start": [
             datetime.datetime(2023, 1, 1),
             datetime.datetime(2023, 1, 15),
