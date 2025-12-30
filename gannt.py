@@ -1,11 +1,19 @@
+import pandas as pd
+import plotly.express as px
+import datetime
+
+
 def create_gantt_chart(df):
+    # px.timelineを使用してガントチャートを作成
     fig = px.timeline(df, x_start="Start", x_end="Finish", y="Task", color="Resource")
-    fig.update_yaxes(autorange="reversed")
+    fig.update_yaxes(autorange="reversed")  # タスクを上から順に並べる
     return fig
+
 
 def main():
     data = {
-        "Task": ["Project A", "Project B", "Project C", "Project D", "Project E"],
+        # データの個数をすべて4つに合わせました
+        "Task": ["Project A", "Project B", "Project C", "Project D"],
         "Start": [
             datetime.datetime(2023, 1, 1),
             datetime.datetime(2023, 1, 15),
@@ -24,6 +32,7 @@ def main():
 
     fig = create_gantt_chart(df)
     fig.show()
+
 
 if __name__ == "__main__":
     main()
